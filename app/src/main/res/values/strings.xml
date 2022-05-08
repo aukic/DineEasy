@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">DineEasy</string>
+    <string name="book_table">Book a table</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="new_acc">Create your free account here.</string>
+    <string name="gotoSignIn">Already have an account? Sign in here.</string>
+    <string name="salsa">Bistro Šalša</string>
+    <string name="salsaRating">4.5/5</string>
+    <string name="salsaLocation">Kostelska Ulica 11, Zagreb</string>
+    <string name="salsaDescription">Barbecue, European, Vegetarian Friendly</string>
+    <string name="plac">Plac</string>
+    <string name="placRating">4.5/5</string>
+    <string name="placLocation">Dolac 2, Zagreb</string>
+    <string name="placDescription">Local cuisine, Barbecue, European, Eastern European, Croatian, Grill</string>
+    <string name="lari">Lari&amp;Penati</string>
+    <string name="lariRating">4.0/5</string>
+    <string name="lariLocation">Petrinjska Ulica 42a, Zagreb</string>
+    <string name="lariDescription">Local cuisine, European, Croatian, Contemporary, Vegetarian Friendly</string>
+    <string name="maliBar">Mali Bar</string>
+    <string name="maliBarRating">4.5/5</string>
+    <string name="maliBarLocation">Vlaška Ulica 63, Zagreb</string>
+    <string name="maliBarDescription">European, Croatian, Mediterranean, Contemporary, Vegetarian Friendly, Gluten Free Options</string>
+    <string name="rouge">RougeMarin</string>
+    <string name="rougeRating">4.0/5</string>
+    <string name="rougeLocation">Ulica Frana Folnegovica 10, Zagreb</string>
+    <string name="rougeDescription">Bar, European, Croatian, Vegetarian Friendly, Vegan Options, Gluten Free Options</string>
+    <string name="haustor">Haustor Haus</string>
+    <string name="haustorRating">5,0/5</string>
+    <string name="haustorLocation">Masarykova Ulica 26/1, Zagreb</string>
+    <string name="haustorDescription">International, European, Croatian, Vegetarian Friendly</string>
+    <string name="logout">Logout</string>
+    <string name="reservation">Reservation received</string>
+    <string name="thanks">Thank you for using our services</string>
+    <string name="title_activity_sign_up">SignUp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="resetPassword">Forgot password?</string>
+    <string name="fail">Table is not available.</string>
+    <string name="myEmail">Email: anteukic@hotmail.com</string>
+    <string name="myPhoneNumber">Phone number: +385917264603</string>
+    <string name="appDescription">This application is created by Ante Ukić, junior student at Faculty of Electrical Engineering, Computer Science and Information Technology Osijek.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

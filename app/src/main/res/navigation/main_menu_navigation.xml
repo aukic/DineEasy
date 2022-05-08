@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_menu_navigation"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="ukic.ante.dineeasy.ui.mainmenu.AboutUsFragment"
+        android:label="AboutUsFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ukic.ante.dineeasy.ui.mainmenu.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="ukic.ante.dineeasy.ui.mainmenu.ReservationFragment"
+        android:label="ReservationFragment" />
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="ukic.ante.dineeasy.ui.mainmenu.MainMenuFragment"
+        android:label="MainMenuFragment" >
+    </fragment>
+</navigation>

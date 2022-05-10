@@ -56,7 +56,7 @@
             android:layout_below="@+id/tvTime"
             />
         <ImageView
-            android:id="@+id/cancelButton123"
+            android:id="@+id/ivCancelButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"

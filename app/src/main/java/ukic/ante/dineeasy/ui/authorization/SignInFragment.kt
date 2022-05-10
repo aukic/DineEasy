@@ -26,6 +26,8 @@ class SignInFragment:Fragment() {
         binding.tvNewAcc.setOnClickListener { showSignUpFragment() }
         binding.btnSignIn.setOnClickListener { showMainMenu() }
 
+
+
         return binding.root
     }
 

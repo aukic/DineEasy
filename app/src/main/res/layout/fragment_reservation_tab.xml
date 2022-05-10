@@ -6,19 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.mainmenu.MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/reservationViewPager"
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpReservations"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/reservationTabLayout"
-            android:layout_alignParentTop="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/buttons"
-            app:tabTextColor="@color/glass"
-            app:tabIndicatorColor="@color/glass"
-            />
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlReservations"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttons"
+        app:tabTextColor="@color/glass"
+        app:tabIndicatorColor="@color/glass"
+        />
 
 </RelativeLayout>

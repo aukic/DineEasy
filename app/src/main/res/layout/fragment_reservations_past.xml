@@ -6,7 +6,7 @@
     android:background="@drawable/background_no_middle_part"
     >
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView1"
+        android:id="@+id/rvPastReservations"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"

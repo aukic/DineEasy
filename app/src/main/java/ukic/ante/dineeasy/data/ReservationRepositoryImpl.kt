@@ -1,6 +1,7 @@
 package ukic.ante.dineeasy.data
 
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
@@ -37,45 +38,54 @@ class ReservationRepositoryImpl(): ReservationRepository {
     }
 
     override fun getAllActiveReservations(): LiveData<List<Reservation>> {
-        collectionReference.document(firebaseAuth.uid.toString()).collection("Orders")
-        val query: Query = collectionReference.orderBy("Timestamp",Query.Direction.DESCENDING).whereGreaterThan("Timestamp",systemTime)
-        val reservationList:List<Reservation> = mutableListOf()
+        val reservationList= mutableListOf<Reservation>()
         val reservationListLiveData: MutableLiveData<List<Reservation>> = MutableLiveData<List<Reservation>>()
-        query.addSnapshotListener { value, _ ->
-            for (documentSnapshot: DocumentChange in value?.documentChanges!!){
-                val reservedTable = documentSnapshot.document.get("reservedTable").toString()
-                val timeOfArrival = documentSnapshot.document.get("timeOfArrival").toString()
-                val restaurantName = documentSnapshot.document.get("restaurantName").toString()
-                val dateOfArrival = documentSnapshot.document.get("dateOfArrival").toString()
-                val convertedDate = Date.valueOf(dateOfArrival)
-                val convertedTime = Time.valueOf(timeOfArrival)
-                val reservation = Reservation(restaurantName,convertedTime,reservedTable,convertedDate)
-                reservationList.plus(reservation)
-                reservationListLiveData.value = reservationList
+        collectionReference.document(firebaseAuth.uid.toString()).collection("Narudbe")
+            .get()
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    for (document in it.result){
+                        val reservedTable = document.data.getValue("reservedTable").toString()
+                        val timeOfArrival = document.data.getValue("timeOfArrival").toString()
+                        val restaurantName = document.data.getValue("restaurantName").toString()
+                        val dateOfArrival = document.data.getValue("dateOfArrival").toString()
+                        val timestamp = document.data.getValue("Timestamp").toString().toLong()
+                        val convertedDate = Date.valueOf(dateOfArrival)
+                        val convertedTime = Time.valueOf(timeOfArrival)
+                        val reservation = Reservation(restaurantName,convertedTime,reservedTable,convertedDate)
+                        if (timestamp > systemTime){
+                            reservationList.add(reservation)
+                            reservationListLiveData.value = reservationList
+                        }
+                    }
+                }
             }
-        }
-
         return reservationListLiveData
     }
 
     override fun getAllPastReservations(): LiveData<List<Reservation>>  {
-        collectionReference.document(firebaseAuth.uid.toString()).collection("Orders")
-        val query: Query = collectionReference.orderBy("Timestamp",Query.Direction.DESCENDING).whereLessThan("Timestamp",systemTime)
-        val reservationList:List<Reservation> = mutableListOf()
+        val reservationList= mutableListOf<Reservation>()
         val reservationListLiveData: MutableLiveData<List<Reservation>> = MutableLiveData<List<Reservation>>()
-        query.addSnapshotListener { value, _ ->
-            for (documentSnapshot: DocumentChange in value?.documentChanges!!){
-                val reservedTable = documentSnapshot.document.get("reservedTable").toString()
-                val timeOfArrival = documentSnapshot.document.get("timeOfArrival").toString()
-                val restaurantName = documentSnapshot.document.get("restaurantName").toString()
-                val dateOfArrival = documentSnapshot.document.get("dateOfArrival").toString()
-                val convertedDate = Date.valueOf(dateOfArrival)
-                val convertedTime = Time.valueOf(timeOfArrival)
-                val reservation = Reservation(restaurantName,convertedTime,reservedTable,convertedDate)
-                reservationList.plus(reservation)
-                reservationListLiveData.value = reservationList
+        collectionReference.document(firebaseAuth.uid.toString()).collection("Narudbe")
+            .get()
+            .addOnCompleteListener {
+                if (it.isSuccessful){
+                    for (document in it.result){
+                        val reservedTable = document.data.getValue("reservedTable").toString()
+                        val timeOfArrival = document.data.getValue("timeOfArrival").toString()
+                        val restaurantName = document.data.getValue("restaurantName").toString()
+                        val dateOfArrival = document.data.getValue("dateOfArrival").toString()
+                        val timestamp = document.data.getValue("Timestamp").toString().toLong()
+                        val convertedDate = Date.valueOf(dateOfArrival)
+                        val convertedTime = Time.valueOf(timeOfArrival)
+                        val reservation = Reservation(restaurantName,convertedTime,reservedTable,convertedDate)
+                        if (timestamp < systemTime){
+                            reservationList.add(reservation)
+                            reservationListLiveData.value = reservationList
+                        }
+                    }
+                }
             }
-        }
         return reservationListLiveData
     }
 }

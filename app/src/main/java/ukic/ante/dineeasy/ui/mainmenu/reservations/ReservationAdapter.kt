@@ -1,5 +1,6 @@
 package ukic.ante.dineeasy.ui.mainmenu.reservations
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

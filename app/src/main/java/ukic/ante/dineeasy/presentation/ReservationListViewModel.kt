@@ -1,11 +1,11 @@
-package ukic.ante.dineeasy.ui.mainmenu.reservations
+package ukic.ante.dineeasy.presentation
 
 import androidx.lifecycle.ViewModel
 import ukic.ante.dineeasy.data.ReservationRepository
 import ukic.ante.dineeasy.model.Reservation
 
 class ReservationListViewModel(
-    private val reservationRepository: ReservationRepository
+    val reservationRepository: ReservationRepository
 ): ViewModel() {
     val activeReservations = reservationRepository.getAllActiveReservations()
     val pastReservations = reservationRepository.getAllPastReservations()

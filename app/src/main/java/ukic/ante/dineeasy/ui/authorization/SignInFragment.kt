@@ -26,8 +26,10 @@ class SignInFragment:Fragment() {
         binding.tvNewAcc.setOnClickListener { showSignUpFragment() }
         binding.btnSignIn.setOnClickListener { showMainMenu() }
 
-
-
+        if (firebaseAuth.currentUser != null){
+            val action = SignInFragmentDirections.actionSignInFragmentToMainActivity()
+            findNavController().navigate(action)
+        }
         return binding.root
     }
 

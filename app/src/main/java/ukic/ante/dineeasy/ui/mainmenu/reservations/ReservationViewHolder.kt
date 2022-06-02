@@ -4,6 +4,8 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import ukic.ante.dineeasy.databinding.FragmentReservationCellBinding
 import ukic.ante.dineeasy.model.Reservation
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class ReservationViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 

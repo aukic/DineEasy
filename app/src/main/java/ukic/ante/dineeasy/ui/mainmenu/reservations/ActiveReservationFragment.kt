@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ukic.ante.dineeasy.databinding.FragmentReservationsActiveBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ukic.ante.dineeasy.model.Reservation
+import ukic.ante.dineeasy.presentation.ReservationListViewModel
 
 class ActiveReservationFragment:Fragment() , OnReservationEventListener{
     private lateinit var binding: FragmentReservationsActiveBinding

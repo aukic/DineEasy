@@ -15,6 +15,10 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
         </activity>
+        <activity android:name=".ui.restaurantlist.RestaurantListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".ui.authorization.AuthorizationActivity"
             android:exported="true">

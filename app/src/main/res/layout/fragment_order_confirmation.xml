@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_2"
+    >
+    <RelativeLayout
+        android:layout_width="275dp"
+        android:layout_height="400dp"
+        android:background="@drawable/glass"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/etRestaurant"
+            android:text="Your order"
+            android:layout_marginBottom="25dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/etRestaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvRestaurant"
+            android:layout_above="@id/etDate"
+            android:textSize="15dp"
+            android:text="Restaurant name"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/tvRestaurant"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@id/etDate"
+            android:textSize="15dp"
+            android:text="Restaurant:"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:textSize="15dp"
+            android:text="Date: "
+            android:layout_margin="10dp"
+            android:layout_above="@+id/tvTime"
+            />
+        <TextView
+            android:id="@+id/etDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvDate"
+            android:textSize="15dp"
+            android:text="Date: "
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/etTime"
+            />
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="15dp"
+            android:text="Time: "
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/etTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvTime"
+            android:textSize="15dp"
+            android:text="Time: "
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/tvStol"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="15dp"
+            android:text="Table: "
+            android:layout_margin="10dp"
+            android:layout_below="@+id/etTime"
+            />
+        <TextView
+            android:id="@+id/etStol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvStol"
+            android:textSize="15dp"
+            android:text="Time: "
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/tvTime"
+            />
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:layout_below="@id/etStol"
+            android:text="Confirm"
+            android:backgroundTint="@color/buttons"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,13 +1,18 @@
 package ukic.ante.dineeasy.ui.mainmenu.reservations
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import ukic.ante.dineeasy.databinding.FragmentReservationsActiveBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ukic.ante.dineeasy.R
 import ukic.ante.dineeasy.model.Reservation
 import ukic.ante.dineeasy.presentation.ReservationListViewModel
 
@@ -24,11 +29,7 @@ class ActiveReservationFragment:Fragment() , OnReservationEventListener{
         binding = FragmentReservationsActiveBinding.inflate(layoutInflater)
 
         setUpRecyclerView()
-        viewModel.activeReservations.observe(viewLifecycleOwner){
-            if(it != null && it.isNotEmpty()){
-                adapter.setReservations(it)
-            }
-        }
+        fillRecycler()
 
         return binding.root
     }
@@ -45,8 +46,25 @@ class ActiveReservationFragment:Fragment() , OnReservationEventListener{
     }
 
     override fun onReservationSelected(reservation: Reservation?) {
-        reservation?.let {
-            viewModel.deleteReservation(it)
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage("Are you sure you want to cancel your reservation?")
+        builder.setPositiveButton("Yes"){dialog,which ->
+            reservation?.let { it ->
+                viewModel.deleteReservation(it)
+                Toast.makeText(requireContext(), "Reservation cancelled", Toast.LENGTH_SHORT).show()
+            }
+        }
+        builder.setNegativeButton("No"){dialog,which ->
+
+        }
+        builder.show()
+    }
+
+    override fun fillRecycler() {
+        viewModel.activeReservations.observe(viewLifecycleOwner){
+            if(it != null && it.isNotEmpty()){
+                adapter.setReservations(it)
+            }
         }
     }
 }

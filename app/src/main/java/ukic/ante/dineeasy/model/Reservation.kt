@@ -1,14 +1,12 @@
 package ukic.ante.dineeasy.model
 
+import android.os.Parcelable
 import com.google.type.DateTime
+import kotlinx.parcelize.Parcelize
 import java.sql.Date
 import java.sql.Time
 
-class Reservation(
-    val restaurantName: String,
-    val timeOfArrival: Time,
-    val reservedTable: String,
-    val dateOfArrival: Date
-) {
-
+@Parcelize
+class Reservation(var restaurantName: String, var timeOfArrival: Time, var reservedTable: String, var dateOfArrival: Date):Parcelable
+ {
 }

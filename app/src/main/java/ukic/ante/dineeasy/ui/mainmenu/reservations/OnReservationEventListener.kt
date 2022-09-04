@@ -4,4 +4,5 @@ import ukic.ante.dineeasy.model.Reservation
 
 interface OnReservationEventListener {
     fun onReservationSelected(reservation: Reservation?)
+    fun fillRecycler()
 }

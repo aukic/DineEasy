@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/restaurant_list_navigation"
+    app:startDestination="@id/restaurantListFragment">
+
+    <fragment
+        android:id="@+id/haustorTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.HaustorTableSelectionFragment"
+        android:label="HaustorTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_haustorTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lariTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.LariTableSelectionFragment"
+        android:label="LariTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_lariTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rougemarinTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.RougemarinTableSelectionFragment"
+        android:label="RougemarinTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_rougemarinTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.PlacTableSelectionFragment"
+        android:label="PlacTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_placTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salsaTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.SalsaTableSelectionFragment"
+        android:label="SalsaTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_salsaTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantListFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.RestaurantListFragment"
+        android:label="RestaurantListFragment" >
+        <action
+            android:id="@+id/action_restaurantListFragment_to_arrivalSelectionFragment"
+            app:destination="@id/arrivalSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/arrivalSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.ArrivalSelectionFragment"
+        android:label="ArrivalSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_salsaTableSelectionFragment"
+            app:destination="@id/salsaTableSelectionFragment" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_placTableSelectionFragment"
+            app:destination="@id/placTableSelectionFragment" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_haustorTableSelectionFragment"
+            app:destination="@id/haustorTableSelectionFragment" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_rougemarinTableSelectionFragment"
+            app:destination="@id/rougemarinTableSelectionFragment" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_lariTableSelectionFragment"
+            app:destination="@id/lariTableSelectionFragment" />
+        <action
+            android:id="@+id/action_arrivalSelectionFragment_to_malibaTableSelectionFragment"
+            app:destination="@id/malibaTableSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/malibaTableSelectionFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.MalibarTableSelectionFragment"
+        android:label="MalibaTableSelectionFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_malibaTableSelectionFragment_to_orderConfirmationFragment"
+            app:destination="@id/orderConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderConfirmationFragment"
+        android:name="ukic.ante.dineeasy.ui.restaurantlist.OrderConfirmationFragment"
+        android:label="OrderConfirmationFragment" >
+        <argument
+            android:name="reservation"
+            app:argType="ukic.ante.dineeasy.model.Reservation" />
+        <action
+            android:id="@+id/action_orderConfirmationFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="ukic.ante.dineeasy.ui.mainmenu.MainActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
+</navigation>

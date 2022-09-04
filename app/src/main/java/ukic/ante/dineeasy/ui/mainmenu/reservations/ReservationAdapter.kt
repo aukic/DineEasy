@@ -9,7 +9,7 @@ import ukic.ante.dineeasy.model.Reservation
 
 class ReservationAdapter: RecyclerView.Adapter<ReservationViewHolder>() {
 
-    private val reservations = mutableListOf<Reservation>()
+    private var reservations = mutableListOf<Reservation>()
     var onReservationEventListener: OnReservationEventListener? = null
 
     fun setReservations(reservations: List<Reservation>){
